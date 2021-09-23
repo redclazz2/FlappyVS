@@ -16,7 +16,7 @@ GameObject:
   - component: {fileID: 491268736203556995}
   - component: {fileID: 8186581556126079419}
   - component: {fileID: 9067852407858335292}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: Jugador
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -201,7 +201,7 @@ AudioSource:
     m_Curve:
     - serializedVersion: 3
       time: 0
-      value: 1
+      value: 0.512
       inSlope: 0
       outSlope: 0
       tangentMode: 0
@@ -348,7 +348,7 @@ AudioSource:
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 8300000, guid: 77368039d0a331746bd0e34017b2b3fb, type: 3}
-  m_PlayOnAwake: 1
+  m_PlayOnAwake: 0
   m_Volume: 1
   m_Pitch: 1
   Loop: 0
@@ -445,7 +445,7 @@ GameObject:
   - component: {fileID: 8264376665454973219}
   - component: {fileID: 6510483060623632277}
   - component: {fileID: 2126529533920360926}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: Text (TMP)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
