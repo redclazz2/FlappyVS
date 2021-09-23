@@ -9,7 +9,8 @@ public class PlayerControl : MonoBehaviour
     public int playerNumber = 1;
     public Sprite idleSprite, keyPressedSprite;
     public GameObject puntoAparicion;
-
+    public float playerScore = 0;
+    
     private AudioSource[] sonidos;
     private Rigidbody2D playerRigidBody;
     private SpriteRenderer playerSpriteRender;
@@ -60,10 +61,21 @@ public class PlayerControl : MonoBehaviour
 
     private void OnCollisionEnter2D(Collision2D other)
     {
-        if (other.gameObject.tag == "Obstaculo")
+        if (other.gameObject.tag == "Obstaculo" || other.gameObject.tag == "Player")
         {
             transform.position = puntoAparicion.transform.position;
             sonidos[0].Play();
+        }
+        else if (other.gameObject.tag == "CambioDir")
+        {
+            if (MovementDir == Vector2.left)
+            {
+                MovementDir = Vector2.right;
+            }
+            else if (MovementDir == Vector2.right)
+            {
+                MovementDir = Vector2.left;
+            }
         }
     }
 }

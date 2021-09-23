@@ -137,12 +137,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 686cedda51ab2ac49b26bd9ebdc653dc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  velocity: 1
+  velocity: 3
   playerNumber: 1
   idleSprite: {fileID: 0}
   keyPressedSprite: {fileID: 0}
   puntoAparicion: {fileID: 0}
-  sourceSonido: {fileID: 0}
 --- !u!82 &491268736203556995
 AudioSource:
   m_ObjectHideFlags: 0
@@ -257,7 +256,7 @@ AudioSource:
   Mute: 0
   Spatialize: 0
   SpatializePostEffects: 0
-  Priority: 128
+  Priority: 69
   DopplerLevel: 1
   MinDistance: 1
   MaxDistance: 500
@@ -295,7 +294,7 @@ AudioSource:
     m_Curve:
     - serializedVersion: 3
       time: 0
-      value: 0
+      value: 0.502
       inSlope: 0
       outSlope: 0
       tangentMode: 0
