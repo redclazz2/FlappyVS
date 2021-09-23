@@ -16,12 +16,16 @@ public class ControladorPick : MonoBehaviour
 
     private AudioSource[] sonidos;
     private float minutes,seconds;
+    private PlayerControl player1Sc, player2Sc;
+    private string timeTXTString="";
     void Start()
     {
         InvokeRepeating("Spawn", 0.7f, 0.7f);
         InvokeRepeating("Pipe", 1.55f, 1.55f);
         timerIsRunning = true;
 
+        player1Sc = Player1.GetComponent<PlayerControl>();
+        player2Sc = Player2.GetComponent<PlayerControl>();
         sonidos = GetComponents<AudioSource>();
     }
 
@@ -39,6 +43,11 @@ public class ControladorPick : MonoBehaviour
 
     private void Update()
     {
+        if (timeRemaining < 60f)
+        {
+            player1Sc.velocity =5f;
+            player1Sc.velocity =5f;
+        }
         if (timerIsRunning)
         {
             if (timeRemaining > 0.1f)
@@ -47,7 +56,7 @@ public class ControladorPick : MonoBehaviour
                 minutes = Mathf.FloorToInt(timeRemaining / 60);
                 float seconds = Mathf.FloorToInt(timeRemaining % 60);
 
-                timerText.text = string.Format("{0:00}:{1:00}",minutes,seconds);
+                timerText.text = string.Format(timeTXTString + "{0:00}:{1:00}",minutes,seconds);
             }
             else
             {
@@ -55,7 +64,7 @@ public class ControladorPick : MonoBehaviour
                     Player2.GetComponent<PlayerControl>().playerScore)
                 {
                     timeRemaining = 30;
-                    timerText.text = string.Format("TIEMPO EXTRA: {0:00}:{1:00}",minutes,seconds);
+                    timeTXTString = "TIEMPO EXTRA: ";
                     sonidos[0].Stop();
                     sonidos[1].Stop();
                     sonidos[0].Play();
