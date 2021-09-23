@@ -12,14 +12,15 @@ public class PickUpController : MonoBehaviour
     void Start()
     {
         spriteObjeto = GetComponent<SpriteRenderer>();
-        if (Random.Range(0, 1) == 1)
+        float numero = Random.Range(0f, 1f);
+        if (numero < 0.1)
         {
-            tag = "Diamante";
+            gameObject.tag = "Diamante";
             spriteObjeto.sprite = spriteDiamante;
         }
         else
         {
-            tag = "Moneda";
+            gameObject.tag = "Moneda";
             spriteObjeto.sprite = spriteMoneda;
         }
             
@@ -34,8 +35,16 @@ public class PickUpController : MonoBehaviour
         else if (other.gameObject.tag == "Player")
         {
             var scripPuntos = other.gameObject.GetComponent<PlayerControl>();
-            scripPuntos.playerScore++;
-            Destroy(this.gameObject);
+            if (this.tag =="Diamante")
+            {
+                scripPuntos.playerScore += 5;
+            }
+            else
+            {
+                scripPuntos.playerScore += 1;
+            }
+            
+            Destroy(gameObject);
         }
     }
 }

@@ -2,6 +2,7 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class PlayerControl : MonoBehaviour
 {   
@@ -9,14 +10,14 @@ public class PlayerControl : MonoBehaviour
     public int playerNumber = 1;
     public Sprite idleSprite, keyPressedSprite;
     public GameObject puntoAparicion;
-    public float playerScore = 0;
-    
+    public int playerScore = 0;
+
     private AudioSource[] sonidos;
     private Rigidbody2D playerRigidBody;
     private SpriteRenderer playerSpriteRender;
     private KeyCode jumpChecker;
     private Vector2 MovementDir;
-    void Start()
+    void Awake()
     {
         playerRigidBody = gameObject.GetComponent<Rigidbody2D>();
         playerSpriteRender = gameObject.GetComponent<SpriteRenderer>();
@@ -63,6 +64,7 @@ public class PlayerControl : MonoBehaviour
     {
         if (other.gameObject.tag == "Obstaculo" || other.gameObject.tag == "Player")
         {
+            playerScore = playerScore / 2;
             transform.position = puntoAparicion.transform.position;
             sonidos[0].Play();
         }
@@ -77,5 +79,9 @@ public class PlayerControl : MonoBehaviour
                 MovementDir = Vector2.left;
             }
         }
+        else if (other.gameObject.tag == "Diamante" || other.gameObject.tag == "Moneda")
+        {
+            sonidos[2].Play();
+        } 
     }
 }
