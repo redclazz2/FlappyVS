@@ -46,7 +46,7 @@ public class ControladorPick : MonoBehaviour
         if (timeRemaining < 60f)
         {
             player1Sc.velocity =5f;
-            player1Sc.velocity =5f;
+            player2Sc.velocity =5f;
         }
         if (timerIsRunning)
         {
