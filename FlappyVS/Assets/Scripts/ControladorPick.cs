@@ -43,14 +43,14 @@ public class ControladorPick : MonoBehaviour
 
     private void Update()
     {
-        if (timeRemaining < 60f)
+        if (Mathf.FloorToInt(timeRemaining) == 60)
         {
             player1Sc.velocity =5f;
             player2Sc.velocity =5f;
         }
         if (timerIsRunning)
         {
-            if (timeRemaining > 0.1f)
+            if (Mathf.FloorToInt(timeRemaining) > 0.1f)
             {
                 timeRemaining -= Time.deltaTime;
                 minutes = Mathf.FloorToInt(timeRemaining / 60);

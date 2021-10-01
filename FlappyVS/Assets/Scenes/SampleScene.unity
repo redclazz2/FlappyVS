@@ -3453,7 +3453,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   pickUp: {fileID: 3536977473943152080, guid: 7b7e78f53e6e60d42a91ff31f2579f62, type: 3}
   obstaclePipe: {fileID: 2590635191013151055, guid: 6e1c4ea73fd7da4419535633b3ec3b4f, type: 3}
-  timeRemaining: 180.01
+  timeRemaining: 179.5
   timerIsRunning: 0
   timerText: {fileID: 1215816680}
   Player1: {fileID: 848823899}
@@ -3470,7 +3470,7 @@ AudioSource:
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 8300000, guid: 82c9122ca551e984cb372504aa9d9113, type: 3}
   m_PlayOnAwake: 1
-  m_Volume: 0.604
+  m_Volume: 0.32
   m_Pitch: 1
   Loop: 0
   Mute: 0
@@ -3566,7 +3566,7 @@ AudioSource:
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 8300000, guid: 2706c6f2b93fded41ab83e8dde7f8076, type: 3}
   m_PlayOnAwake: 0
-  m_Volume: 0.679
+  m_Volume: 0.38
   m_Pitch: 1
   Loop: 1
   Mute: 0
@@ -5788,6 +5788,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 491268736203556995, guid: e0d9c94155280b44884906a8f104430a, type: 3}
+      propertyPath: m_Volume
+      value: 0.68
+      objectReference: {fileID: 0}
     - target: {fileID: 1115093711686459669, guid: e0d9c94155280b44884906a8f104430a, type: 3}
       propertyPath: idleSprite
       value: 
@@ -5855,6 +5859,10 @@ PrefabInstance:
     - target: {fileID: 6510483060623632277, guid: e0d9c94155280b44884906a8f104430a, type: 3}
       propertyPath: m_overrideHtmlColors
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8186581556126079419, guid: e0d9c94155280b44884906a8f104430a, type: 3}
+      propertyPath: m_Volume
+      value: 0.6
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: e0d9c94155280b44884906a8f104430a, type: 3}
